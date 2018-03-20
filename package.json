@@ -1,0 +1,21 @@
+{
+  "name": "quizapp",
+  "version": "1.0.0",
+  "description": "trivia quiz app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hardik Lakdawala",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "mongojs": "^2.5.0"
+  },
+  "devDependencies": {
+    "@angular/cli": "^1.7.2"
+  }
+}

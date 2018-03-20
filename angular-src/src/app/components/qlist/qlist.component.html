@@ -1,0 +1,50 @@
+<ul class="list-group"  *ngIf="mquizData.length else home">
+  <li class="list-group-item" *ngFor="let quizItem of mquizData; let i = index">
+    <div class="card">
+      <div class="card-header">
+        {{quizItem.question}}
+      </div>
+      <div class="card-body">
+        <ul #list id='{{i}}-list'> 
+          
+          <li class="radio" *ngFor="let option of quizItem.options; let j = index" id={{i}}-{{j}} #item >  
+            <label><input type="radio" #opt  name={{i}} value={{option}} (click)='selectedListItem(item, opt.value, list.id)' /> {{option}} </label>
+          </li>
+          <button type="button" class="btn btn-dark" (click)=checkAnswer(list)>submit</button>
+          <span class="option-err"></span>
+        
+        </ul>
+      </div> 
+      
+    </div>
+  </li>
+</ul> 
+
+<ng-template #home>
+  <ul class="list-inline" id="home">
+    <li class="css_card list-inline-item" id="sports" (click)='show(sports.id)' #sports>
+      <img src="../../assets/icons/sports.png" alt="Card image">
+      <div class="card-body">
+        <h5 class="card-title" style="text-align:center">Sports</h5>
+      </div>
+    </li>
+    <li class="css_card list-inline-item" id="movies" (click)='show(movies.id)' #movies>
+      <img src="../../assets/icons/movies.png" alt="Card image">
+      <div class="card-body">
+        <h5 class="card-title" style="text-align:center">Movies</h5>
+      </div>
+    </li>
+    <li class="css_card list-inline-item" id="history" (click)='show(history.id)' #history>
+      <img src="../../assets/icons/swords.png" alt="Card image">
+      <div class="card-body">
+        <h5 class="card-title" style="text-align:center">History</h5>
+      </div>
+    </li>
+    <li class="css_card list-inline-item" id="geography" (click)='show(geography.id)' #geography>
+      <img src="../../assets/icons/earth-globe.png" alt="Card image">
+      <div class="card-body">
+        <h5 class="card-title">Geography</h5>
+      </div>
+    </li>
+  </ul>
+</ng-template>
