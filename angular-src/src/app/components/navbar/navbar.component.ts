@@ -15,8 +15,6 @@ export class NavbarComponent implements OnInit {
   constructor(private questionService: FetchQuestionService, private sharedData: SharedService) {
     const self = this;
     this.sharedData.quizData$.subscribe(function (qdata) {
-      console.log('qdata: ');
-      console.log(qdata);
       if (typeof qdata  === 'string') {
           self.markActiveCategeory(qdata);
       }
@@ -53,10 +51,11 @@ export class NavbarComponent implements OnInit {
     this.lastClickedItem = listItem;
 
     if (e.target.id === 'home') {
-      const qdata = { questions: [] };
+      const qdata = [];
       self.sharedData.publishData(qdata);
     } else {
     this.questionService.fetchQuestionData(e.target.id).subscribe(function(qdata) {
+      console.log(qdata);
       self.sharedData.publishData(qdata);
     });
   }

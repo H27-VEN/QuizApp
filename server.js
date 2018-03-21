@@ -2,10 +2,9 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-// require mongojs see the syntax in mongojs documentation
 
 const app = express();
-const port = 3000;
+const port = 5000;
  
 const quiz = require('./routes/quiz');
 

@@ -264,8 +264,6 @@ var NavbarComponent = /** @class */ (function () {
         this.sharedData = sharedData;
         var self = this;
         this.sharedData.quizData$.subscribe(function (qdata) {
-            console.log('qdata: ');
-            console.log(qdata);
             if (typeof qdata === 'string') {
                 self.markActiveCategeory(qdata);
             }
@@ -297,11 +295,12 @@ var NavbarComponent = /** @class */ (function () {
         }
         this.lastClickedItem = listItem;
         if (e.target.id === 'home') {
-            var qdata = { questions: [] };
+            var qdata = [];
             self.sharedData.publishData(qdata);
         }
         else {
             this.questionService.fetchQuestionData(e.target.id).subscribe(function (qdata) {
+                console.log(qdata);
                 self.sharedData.publishData(qdata);
             });
         }
@@ -362,8 +361,8 @@ var QlistComponent = /** @class */ (function () {
         this.mquizData = [];
         var self = this;
         this.sharedData.quizData$.subscribe(function (qdata) {
-            if (qdata.questions) {
-                self.mquizData = qdata.questions;
+            if (typeof qdata === 'object' && Array.isArray(qdata)) {
+                self.mquizData = qdata;
             }
         });
     }
@@ -415,7 +414,8 @@ var QlistComponent = /** @class */ (function () {
         var self = this;
         this.questionService.fetchQuestionData(id).subscribe(function (qdata) {
             self.mquizData = [];
-            self.mquizData = qdata.questions;
+            console.log(qdata);
+            self.mquizData = qdata;
             self.sharedData.publishData(id);
         });
     };
@@ -457,7 +457,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var FetchQuestionService = /** @class */ (function () {
     function FetchQuestionService(http) {
         this.http = http;
-        this.baseURL = 'http://localhost:3000/quiz/';
+        this.baseURL = 'http://localhost:5000/quiz/';
     }
     FetchQuestionService.prototype.fetchQuestionData = function (quizCategory) {
         switch (quizCategory) {

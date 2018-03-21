@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class FetchQuestionService {
 
-  baseURL = 'http://localhost:3000/quiz/';
+  baseURL = 'http://localhost:5000/quiz/';
 
   constructor(public http: Http) {}
 
@@ -16,7 +16,7 @@ export class FetchQuestionService {
       case 'movies':
       case 'history':
       case 'geography':
-        return this.http.get(this.baseURL + quizCategory).map(res => res.json());
+        return this.http.get(this.baseURL + quizCategory).map(res =>  res.json());
     }
   }
 

@@ -19,8 +19,8 @@ export class QlistComponent implements OnInit {
   constructor(private questionService: FetchQuestionService, private sharedData: SharedService) {
     const self = this;
     this.sharedData.quizData$.subscribe(function(qdata) {
-        if (qdata.questions) {
-          self.mquizData = qdata.questions;
+      if (typeof qdata === 'object' && Array.isArray(qdata)) {
+          self.mquizData = qdata;
         }
     });
   }
@@ -76,7 +76,8 @@ export class QlistComponent implements OnInit {
     const self = this;
     this.questionService.fetchQuestionData(id).subscribe(function (qdata) {
       self.mquizData = [];
-      self.mquizData = qdata.questions;
+      console.log(qdata);
+      self.mquizData = qdata;
       self.sharedData.publishData(id);
     });
   }
