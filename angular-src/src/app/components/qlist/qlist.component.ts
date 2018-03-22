@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from '../../services/shared.service';
 import { FetchQuestionService } from '../../services/fetch-question-service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-qlist',
@@ -16,18 +17,22 @@ export class QlistComponent implements OnInit {
   selectedOption: any;
   selectListID: any;
 
-  constructor(private questionService: FetchQuestionService, private sharedData: SharedService) {
-    const self = this;
+  constructor(private route: ActivatedRoute, private router: Router, private questionService: FetchQuestionService,
+    private sharedData: SharedService) {
+
+    console.log('route data: ' + route.snapshot.data['sub']);
+    /* const self = this;
     this.sharedData.quizData$.subscribe(function(qdata) {
       if (typeof qdata === 'object' && Array.isArray(qdata)) {
           self.mquizData = qdata;
         }
-    });
+    }); */
   }
 
 
 
   ngOnInit() {
+    this.show(this.route.snapshot.data['sub']);
   }
 
   selectedListItem(item, option, listID) {
