@@ -1,4 +1,45 @@
-<ul class="list-group"  *ngIf="mquizData.length else loader">
+
+
+<div class="container" *ngIf="quizItem else loader">
+    <div class="row">
+      <div class="col-2">
+        <img src="../../assets/icons/icons-left.png" (click)="prevQ()" id="left">
+      </div>
+      
+      <div class="col-8">
+          <h4 class="time-left">
+              <span>Time Left: </span>
+              <span>{{qtime}}</span>
+          </h4>
+          <div class="css_card">
+            <div class="question">
+              <h5>{{quizItem.question}}</h5>
+            </div>
+          
+            <div class="options">              
+              <p *ngFor="let option of quizItem.options; let i = index" (click)="checkQ(opt)" id={{i}} #opt>
+                <label>{{option}}</label>
+              <!--   <img src="" id="img_{{i}}" class="hide" alt="answer status"  /> -->
+              </p>
+            </div>
+          
+            <!-- <div class="submit-button">
+              <button type=button class="btn btn-md btn-dark" (click)="checkQ(selectedOption, btn)" #btn>submit</button>
+            </div> -->
+          </div>
+          <h4 class="score-points">
+            <span>Score Point: </span>
+            <span>{{score}}</span>
+          </h4>
+      </div>
+      
+      <div class="col-2">
+        <img src="../../assets/icons/icons-right.png" (click)="nextQ()" id="right">
+      </div>
+</div>
+
+
+<!-- <ul class="list-group"  *ngIf="mquizData.length else loader">
   <li class="list-group-item" *ngFor="let quizItem of mquizData; let i = index">
     <div class="card">
       <div class="card-header">
@@ -18,7 +59,7 @@
       
     </div>
   </li>
-</ul> 
+</ul>  -->
 
 <ng-template #loader>
 <div id="loader"></div>

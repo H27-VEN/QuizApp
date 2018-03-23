@@ -12,10 +12,15 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 export class QlistComponent implements OnInit {
   mquizData: any[] = [];
+  quizItem: any = null;
   renderList: any;
   selectedItem: any;
   selectedOption: any;
   selectListID: any;
+  qcount = 0;
+  qtime = 0;
+  lastInterval: any;
+  score = 0;
 
   constructor(private route: ActivatedRoute, private router: Router, private questionService: FetchQuestionService,
     private sharedData: SharedService) {
@@ -83,8 +88,88 @@ export class QlistComponent implements OnInit {
       self.mquizData = [];
       console.log(qdata);
       self.mquizData = qdata;
+      self.LoadQ();
       self.sharedData.publishData(id);
     });
   }
+
+  prevQ() {
+    this.qcount =  (this.qcount > 0) ? this.qcount - 1 : 0;
+    this.LoadQ();
+  }
+
+  nextQ() {
+    this.qcount = (this.qcount < this.mquizData.length - 1) ? this.qcount + 1 : this.mquizData.length - 1;
+    this.LoadQ();
+  }
+
+  LoadQ() {
+    this.stopTimer();
+    this.quizItem = this.mquizData[this.qcount];
+    this.startTimer();
+  }
+
+  checkQ(opt) {
+    console.log(opt.id);
+
+    opt.className = 'selected-answer';
+    const correctIndex = this.quizItem.options.indexOf(this.quizItem.answer);
+    document.getElementById(correctIndex).className = 'correct';
+    const selID = parseInt(opt.id, 10);
+    if (selID === correctIndex) {
+      this.score += 10;
+    } else {
+      document.getElementById(opt.id).className = 'incorrect';
+    }
+
+     const options = document.querySelectorAll('.options p');
+     for (let i = 0; i < options.length; i++) {
+        if (i !== selID || i !== correctIndex) {
+            options[i].setAttribute('disabled', 'true');
+        }
+     }
+
+    // options.setAttribute('disabled', 'true');
+
+    /* btn.disabled = true; */
+    /* let correctImg;
+    let incorrectImg;
+    if (this.quizItem.options[id] === this.quizItem.answer) {
+      correctImg = document.getElementById('img_' + id);
+      correctImg.setAttribute('src', '../../assets/icons/correct.png');
+      correctImg.classList.remove('hide');
+      this.score += 10;
+    } else {
+      const correctID = this.quizItem.options.indexOf(this.quizItem.answer);
+      correctImg = document.getElementById('img_' + correctID);
+      correctImg.setAttribute('src', '../../assets/icons/correct.png');
+      correctImg.classList.remove('hide');
+
+      incorrectImg = document.getElementById('img_' + id);
+      incorrectImg.setAttribute('src', '../../assets/icons/incorrect.png');
+      incorrectImg.classList.remove('hide');
+    } */
+  }
+
+  startTimer() {
+    this.qtime = 8;
+    const self = this;
+    self.lastInterval = setInterval(function () {
+      self.qtime -= 1;
+      if (self.qtime === 0) {
+        clearInterval(self.lastInterval);
+      }
+    }, 1000);
+  }
+
+  stopTimer() {
+    if (this.lastInterval) {
+      clearInterval(this.lastInterval);
+    }
+  }
+
+
+
+
 
 }
