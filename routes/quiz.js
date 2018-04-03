@@ -1,7 +1,13 @@
 const express = require('express');
 const router = express.Router();
 var mongojs = require('mongojs');
-var db = mongojs('mongodb://localhost:27017/quizdb', ['sports','movies', 'history', 'geography']);
+var db;
+try {
+    db = mongojs('mongodb://localhost:27017/quizdb', ['sports','movies', 'history', 'geography']);
+}
+catch(err) {
+    throw 'database not connected';
+}
 
 
 router.get('/sports', function(req, res){

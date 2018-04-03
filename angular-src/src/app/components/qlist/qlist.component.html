@@ -1,5 +1,4 @@
 
-
 <div class="container" *ngIf="quizItem else loader">
     <div class="row">
       <div class="col-2">
@@ -38,29 +37,7 @@
       </div>
 </div>
 
-
-<!-- <ul class="list-group"  *ngIf="mquizData.length else loader">
-  <li class="list-group-item" *ngFor="let quizItem of mquizData; let i = index">
-    <div class="card">
-      <div class="card-header">
-        {{quizItem.question}}
-      </div>
-      <div class="card-body">
-        <ul #list id='{{i}}-list'> 
-          
-          <li class="radio" *ngFor="let option of quizItem.options; let j = index" id={{i}}-{{j}} #item >  
-            <label><input type="radio" #opt  name={{i}} value={{option}} (click)='selectedListItem(item, opt.value, list.id)' /> {{option}} </label>
-          </li>
-          <button type="button" class="btn btn-dark" (click)=checkAnswer(list)>submit</button>
-          <span class="option-err"></span>
-        
-        </ul>
-      </div> 
-      
-    </div>
-  </li>
-</ul>  -->
-
+<!-- css loader until data gets fetched from the server -->
 <ng-template #loader>
 <div id="loader"></div>
 </ng-template>

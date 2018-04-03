@@ -142,7 +142,7 @@ module.exports = ""
 /***/ "./src/app/components/container/container.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n   <router-outlet></router-outlet> <!-- <app-qlist></app-qlist> -->\n</div>\n"
+module.exports = "<div class=\"container\">\r\n   <router-outlet></router-outlet> <!-- <app-qlist></app-qlist> -->\r\n</div>\r\n"
 
 /***/ }),
 
@@ -192,7 +192,7 @@ module.exports = ".css_card {\r\n  /* Add shadows to create the \"card\" effect 
 /***/ "./src/app/components/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<ul class=\"list-inline\" id=\"home\">\n  <li class=\"css_card list-inline-item\" routerLink=\"/quiz/sports\" id=\"sports\">\n    <img src=\"../../assets/icons/sports.png\" alt=\"Card image\">\n    <div class=\"card-body\">\n      <h5 class=\"card-title\" style=\"text-align:center\">Sports</h5>\n    </div>\n  </li>\n  <li class=\"css_card list-inline-item\" routerLink=\"/quiz/movies\" id=\"movies\">\n    <img src=\"../../assets/icons/movies.png\" alt=\"Card image\">\n    <div class=\"card-body\">\n      <h5 class=\"card-title\" style=\"text-align:center\">Movies</h5>\n    </div>\n  </li>\n  <li class=\"css_card list-inline-item\" routerLink=\"/quiz/history\" id=\"history\">\n    <img src=\"../../assets/icons/swords.png\" alt=\"Card image\">\n    <div class=\"card-body\">\n      <h5 class=\"card-title\" style=\"text-align:center\">History</h5>\n    </div>\n  </li>\n  <li class=\"css_card list-inline-item\" routerLink=\"/quiz/geography\" id=\"geography\">\n    <img src=\"../../assets/icons/earth-globe.png\" alt=\"Card image\">\n    <div class=\"card-body\">\n      <h5 class=\"card-title\">Geography</h5>\n    </div>\n  </li>\n</ul>\n"
+module.exports = "<ul class=\"list-inline\" id=\"home\">\r\n  <li class=\"css_card list-inline-item\" routerLink=\"/quiz/sports\" id=\"sports\">\r\n    <img src=\"../../assets/icons/sports.png\" alt=\"Card image\">\r\n    <div class=\"card-body\">\r\n      <h5 class=\"card-title\" style=\"text-align:center\">Sports</h5>\r\n    </div>\r\n  </li>\r\n  <li class=\"css_card list-inline-item\" routerLink=\"/quiz/movies\" id=\"movies\">\r\n    <img src=\"../../assets/icons/movies.png\" alt=\"Card image\">\r\n    <div class=\"card-body\">\r\n      <h5 class=\"card-title\" style=\"text-align:center\">Movies</h5>\r\n    </div>\r\n  </li>\r\n  <li class=\"css_card list-inline-item\" routerLink=\"/quiz/history\" id=\"history\">\r\n    <img src=\"../../assets/icons/swords.png\" alt=\"Card image\">\r\n    <div class=\"card-body\">\r\n      <h5 class=\"card-title\" style=\"text-align:center\">History</h5>\r\n    </div>\r\n  </li>\r\n  <li class=\"css_card list-inline-item\" routerLink=\"/quiz/geography\" id=\"geography\">\r\n    <img src=\"../../assets/icons/earth-globe.png\" alt=\"Card image\">\r\n    <div class=\"card-body\">\r\n      <h5 class=\"card-title\">Geography</h5>\r\n    </div>\r\n  </li>\r\n</ul>\r\n"
 
 /***/ }),
 
@@ -242,7 +242,7 @@ module.exports = ""
 /***/ "./src/app/components/navbar/navbar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<nav class=\"navbar navbar-expand-sm bg-dark navbar-dark\">\n  <ul class=\"navbar-nav\">\n    \n    <li class=\"nav-item\">\n      <a class=\"nav-link\" routerLink=\"/home\" routerLinkActive=\"active\"  id=\"home\">Home</a>\n    </li>\n    \n    <li class=\"nav-item\">\n      <a class=\"nav-link\" routerLink=\"/quiz/sports\" routerLinkActive=\"active\" id=\"sports\">Sports</a>\n    </li>\n    <li class=\"nav-item\">\n      <a class=\"nav-link\" routerLink=\"/quiz/movies\" routerLinkActive=\"active\" id=\"movies\">Movie</a>\n    </li>\n    <li class=\"nav-item\">\n      <a class=\"nav-link\" routerLink=\"/quiz/history\" routerLinkActive=\"active\"  id=\"history\">History</a>\n    </li>\n    <li class=\"nav-item\">\n      <a class=\"nav-link\" routerLink=\"/quiz/geography\" routerLinkActive=\"active\" id=\"geography\">Geography</a>\n    </li>\n  </ul>\n</nav>\n"
+module.exports = "\r\n<nav class=\"navbar navbar-expand-sm bg-dark navbar-dark\">\r\n  <ul class=\"navbar-nav\">\r\n    \r\n    <li class=\"nav-item\">\r\n      <a class=\"nav-link\" routerLink=\"/home\" routerLinkActive=\"active\"  id=\"home\">Home</a>\r\n    </li>\r\n    \r\n    <li class=\"nav-item\">\r\n      <a class=\"nav-link\" routerLink=\"/quiz/sports\" routerLinkActive=\"active\" id=\"sports\">Sports</a>\r\n    </li>\r\n    <li class=\"nav-item\">\r\n      <a class=\"nav-link\" routerLink=\"/quiz/movies\" routerLinkActive=\"active\" id=\"movies\">Movie</a>\r\n    </li>\r\n    <li class=\"nav-item\">\r\n      <a class=\"nav-link\" routerLink=\"/quiz/history\" routerLinkActive=\"active\"  id=\"history\">History</a>\r\n    </li>\r\n    <li class=\"nav-item\">\r\n      <a class=\"nav-link\" routerLink=\"/quiz/geography\" routerLinkActive=\"active\" id=\"geography\">Geography</a>\r\n    </li>\r\n  </ul>\r\n</nav>\r\n"
 
 /***/ }),
 
@@ -338,7 +338,7 @@ module.exports = "ul li.radio {\r\n    list-style-type: none;\r\n}\r\n.card butt
 /***/ "./src/app/components/qlist/qlist.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n\n<div class=\"container\" *ngIf=\"quizItem else loader\">\n    <div class=\"row\">\n      <div class=\"col-2\">\n        <img src=\"../../assets/icons/icons-left.png\" (click)=\"prevQ()\" id=\"left\">\n      </div>\n      \n      <div class=\"col-8\">\n          <h4 class=\"time-left\">\n              <span>Time Left: </span>\n              <span>{{qtime}}</span>\n          </h4>\n          <div class=\"css_card\">\n            <div class=\"question\">\n              <h5>{{quizItem.question}}</h5>\n            </div>\n          \n            <div class=\"options\">              \n              <p *ngFor=\"let option of quizItem.options; let i = index\" (click)=\"checkQ(opt)\" id={{i}} #opt>\n                <label>{{option}}</label>\n              <!--   <img src=\"\" id=\"img_{{i}}\" class=\"hide\" alt=\"answer status\"  /> -->\n              </p>\n            </div>\n          \n            <!-- <div class=\"submit-button\">\n              <button type=button class=\"btn btn-md btn-dark\" (click)=\"checkQ(selectedOption, btn)\" #btn>submit</button>\n            </div> -->\n          </div>\n          <h4 class=\"score-points\">\n            <span>Score Point: </span>\n            <span>{{score}}</span>\n          </h4>\n      </div>\n      \n      <div class=\"col-2\">\n        <img src=\"../../assets/icons/icons-right.png\" (click)=\"nextQ()\" id=\"right\">\n      </div>\n</div>\n\n\n<!-- <ul class=\"list-group\"  *ngIf=\"mquizData.length else loader\">\n  <li class=\"list-group-item\" *ngFor=\"let quizItem of mquizData; let i = index\">\n    <div class=\"card\">\n      <div class=\"card-header\">\n        {{quizItem.question}}\n      </div>\n      <div class=\"card-body\">\n        <ul #list id='{{i}}-list'> \n          \n          <li class=\"radio\" *ngFor=\"let option of quizItem.options; let j = index\" id={{i}}-{{j}} #item >  \n            <label><input type=\"radio\" #opt  name={{i}} value={{option}} (click)='selectedListItem(item, opt.value, list.id)' /> {{option}} </label>\n          </li>\n          <button type=\"button\" class=\"btn btn-dark\" (click)=checkAnswer(list)>submit</button>\n          <span class=\"option-err\"></span>\n        \n        </ul>\n      </div> \n      \n    </div>\n  </li>\n</ul>  -->\n\n<ng-template #loader>\n<div id=\"loader\"></div>\n</ng-template>\n"
+module.exports = "\r\n<div class=\"container\" *ngIf=\"quizItem else loader\">\r\n    <div class=\"row\">\r\n      <div class=\"col-2\">\r\n        <img src=\"../../assets/icons/icons-left.png\" (click)=\"prevQ()\" id=\"left\">\r\n      </div>\r\n      \r\n      <div class=\"col-8\">\r\n          <h4 class=\"time-left\">\r\n              <span>Time Left: </span>\r\n              <span>{{qtime}}</span>\r\n          </h4>\r\n          <div class=\"css_card\">\r\n            <div class=\"question\">\r\n              <h5>{{quizItem.question}}</h5>\r\n            </div>\r\n          \r\n            <div class=\"options\">              \r\n              <p *ngFor=\"let option of quizItem.options; let i = index\" (click)=\"checkQ(opt)\" id={{i}} #opt>\r\n                <label>{{option}}</label>\r\n              <!--   <img src=\"\" id=\"img_{{i}}\" class=\"hide\" alt=\"answer status\"  /> -->\r\n              </p>\r\n            </div>\r\n          \r\n            <!-- <div class=\"submit-button\">\r\n              <button type=button class=\"btn btn-md btn-dark\" (click)=\"checkQ(selectedOption, btn)\" #btn>submit</button>\r\n            </div> -->\r\n          </div>\r\n          <h4 class=\"score-points\">\r\n            <span>Score Point: </span>\r\n            <span>{{score}}</span>\r\n          </h4>\r\n      </div>\r\n      \r\n      <div class=\"col-2\">\r\n        <img src=\"../../assets/icons/icons-right.png\" (click)=\"nextQ()\" id=\"right\">\r\n      </div>\r\n</div>\r\n\r\n<!-- css loader until data gets fetched from the server -->\r\n<ng-template #loader>\r\n<div id=\"loader\"></div>\r\n</ng-template>\r\n"
 
 /***/ }),
 
@@ -376,57 +376,11 @@ var QlistComponent = /** @class */ (function () {
         this.qtime = 0;
         this.score = 0;
         console.log('route data: ' + route.snapshot.data['sub']);
-        /* const self = this;
-        this.sharedData.quizData$.subscribe(function(qdata) {
-          if (typeof qdata === 'object' && Array.isArray(qdata)) {
-              self.mquizData = qdata;
-            }
-        }); */
     }
     QlistComponent.prototype.ngOnInit = function () {
         this.show(this.route.snapshot.data['sub']);
     };
-    QlistComponent.prototype.selectedListItem = function (item, option, listID) {
-        console.log(item);
-        console.log(option);
-        console.log(listID);
-        this.selectedItem = item;
-        this.selectedOption = option;
-        this.selectListID = listID;
-    };
-    QlistComponent.prototype.checkAnswer = function (optionList) {
-        console.log('--- In option list ---');
-        if (optionList.id === this.selectListID) {
-            console.log('in major if');
-            var id = optionList.id.split('-')[0];
-            var correctOption = this.mquizData[id].answer;
-            if (correctOption === this.selectedOption) {
-                if (!this.selectedItem.classList.contains('correct')) {
-                    this.selectedItem.classList.remove('incorrect');
-                    this.selectedItem.classList.add('correct');
-                }
-            }
-            else {
-                var correctListItemID = id + '-' + this.mquizData[id].options.indexOf(correctOption);
-                var listElements = optionList.getElementsByTagName('li');
-                var correctListItem = null;
-                for (var i = 0; i < listElements.length; i++) {
-                    if (listElements[i].id === correctListItemID) {
-                        correctListItem = listElements[i];
-                        break;
-                    }
-                }
-                if (!correctListItem.classList.contains('correct')) {
-                    correctListItem.classList.add('correct');
-                }
-            }
-            optionList.getElementsByTagName('span')[0].innerText = '';
-        }
-        else {
-            console.log('In major else');
-            optionList.getElementsByTagName('span')[0].innerHTML = 'No options selected';
-        }
-    };
+    // fetches the question for specific category
     QlistComponent.prototype.show = function (id) {
         console.log(id);
         var self = this;
@@ -438,19 +392,29 @@ var QlistComponent = /** @class */ (function () {
             self.sharedData.publishData(id);
         });
     };
+    // shows the previous question on the screen
     QlistComponent.prototype.prevQ = function () {
-        this.qcount = (this.qcount > 0) ? this.qcount - 1 : 0;
-        this.LoadQ();
+        if (this.qcount > 0) {
+            this.qcount -= 1;
+            this.LoadQ();
+        }
+        // this.qcount =  (this.qcount > 0) ?  : 0;
     };
+    // shows the next question on the screen
     QlistComponent.prototype.nextQ = function () {
-        this.qcount = (this.qcount < this.mquizData.length - 1) ? this.qcount + 1 : this.mquizData.length - 1;
-        this.LoadQ();
+        if (this.qcount < this.mquizData.length - 1) {
+            this.qcount += 1;
+            this.LoadQ();
+        }
+        // this.qcount = () ? this.qcount + 1 : this.mquizData.length - 1;
     };
+    // shows the current questions on the screen
     QlistComponent.prototype.LoadQ = function () {
         this.stopTimer();
         this.quizItem = this.mquizData[this.qcount];
         this.startTimer();
     };
+    // checks whether the selected answer is correct or not
     QlistComponent.prototype.checkQ = function (opt) {
         console.log(opt.id);
         opt.className = 'selected-answer';
@@ -463,32 +427,9 @@ var QlistComponent = /** @class */ (function () {
         else {
             document.getElementById(opt.id).className = 'incorrect';
         }
-        var options = document.querySelectorAll('.options p');
-        for (var i = 0; i < options.length; i++) {
-            if (i !== selID || i !== correctIndex) {
-                options[i].setAttribute('disabled', 'true');
-            }
-        }
-        // options.setAttribute('disabled', 'true');
-        /* btn.disabled = true; */
-        /* let correctImg;
-        let incorrectImg;
-        if (this.quizItem.options[id] === this.quizItem.answer) {
-          correctImg = document.getElementById('img_' + id);
-          correctImg.setAttribute('src', '../../assets/icons/correct.png');
-          correctImg.classList.remove('hide');
-          this.score += 10;
-        } else {
-          const correctID = this.quizItem.options.indexOf(this.quizItem.answer);
-          correctImg = document.getElementById('img_' + correctID);
-          correctImg.setAttribute('src', '../../assets/icons/correct.png');
-          correctImg.classList.remove('hide');
-    
-          incorrectImg = document.getElementById('img_' + id);
-          incorrectImg.setAttribute('src', '../../assets/icons/incorrect.png');
-          incorrectImg.classList.remove('hide');
-        } */
+        this.nextQ();
     };
+    // timer to complete the answer
     QlistComponent.prototype.startTimer = function () {
         this.qtime = 8;
         var self = this;
