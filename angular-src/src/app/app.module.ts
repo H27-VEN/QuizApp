@@ -12,7 +12,6 @@ import { HomeComponent } from './components/home/home.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  /* { path: '**', redirectTo: '/home', pathMatch: 'full' }, */
   { path: 'home',  component: HomeComponent, data: { sub: 'home' } },
   { path: 'quiz/sports',  component: QlistComponent,  data: {sub: 'sports'} },
   { path: 'quiz/movies',  component: QlistComponent,  data: {sub: 'movies' } },
